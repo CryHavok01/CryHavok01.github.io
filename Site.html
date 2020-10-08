@@ -104,11 +104,11 @@
             var $addSpiceForm = $(".add-spice");
             var $addSpiceButton = $("#add-spice");
             $addSpiceButton.on("click", function() {
-              $("#button-result").hide();
+              $("form").hide();
               $addSpiceForm.show();
             });
             $("#add-recipe").on("click", function() {
-                $("#button-result").hide();
+                $("form").hide();
                 $(".add-recipe").show()
             });
             $newIng.on("click", function() {
