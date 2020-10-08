@@ -27,6 +27,11 @@
                 display: none;
             }
             
+            #recipe-step {
+                width: 100%;
+                height: 150px;
+            }
+            
             footer {
                 text-align: right;
             }
@@ -49,24 +54,95 @@
         
         <form id="button-result" class="add-spice">
             <label>Spice Name:  </label>
-            <input type="text" name="spice-name"><br><br>
+            <input type="text" name="spice-name" class="spice-name"><br><br>
             
             <label>Spice Quantity:  </label>
-            <input type="number" name="spice-quant">
+            <input type="number" name="spice-quant" class="spice-quant"><br><br>
+            
+            <button type="submit">Enter Spice</button>
+            
         </form>
-        
+        <form id="button-result" class="add-recipe">
+            <label>Recipe Name:  </label>
+            <input type="text" name="recipe-name" class="recipe-name"><br><br>
+            
+            <label>Ingredient 1:  </label>
+            <input type="text" name="i1-name" class="i1-name"><br>
+            <label>Quantity:    </label>
+            <input type="number" name="i1-quant" class="i1-quant"><br><br>
+            
+            <label>Ingredient 2:  </label>
+            <input type="text" name="i2-name" class="i2-name"><br>
+            <label>Quantity:    </label>
+            <input type="number" name="i2-quant" class="12-quant"><br><br>
+            
+            <button type="button" id="new-ingredient">New Ingredent</button><br><br>
+            
+            <label>Step 1:</label>
+            <input type="text" id="recipe-step"><br><br>
+            
+            <label>Step 2:</label>
+            <input type="text" id="recipe-step"><br><br>
+            
+            <button type="button" id="new-step">New Step</button>
+            
+            <button type="submit">Enter Recipe</button>
+            
+            
+        </form>
             
     <footer>
-        <p>version 0.1</p>
+        <p>version 0.2</p>
     <script src="jquery-3.5.1.min.js"></script>
         
         <script>
             $(".fact").css("background-color", "green");
+            var curIng = 2;
+            var curStep = 2;
+            var $newStep = $("#new-step");
+            var $newIng = $("#new-ingredient");
             var $addSpiceForm = $(".add-spice");
             var $addSpiceButton = $("#add-spice");
             $addSpiceButton.on("click", function() {
+              $("#button-result).hide();
               $addSpiceForm.show();
             });
+            $newIng.on("click", function() {
+                curIng++
+                $("<label>")
+                    .text("Ingredient " + curIng + ": ")
+                    .prependTo("#new-ingredient")
+                $("<input>")
+                    .type("text")
+                    .name("i" + curIng + "-name")
+                    .class("i" + curIng + "-name")
+                    .prependTo("#new-ingredient")
+                $("<br>").prependTo("#new-ingredient")
+                $("<br>").prependTo("#new-ingredient")
+                $("<label>")
+                    .text("Quantity")
+                    .prependTo("#new-ingredient")
+                $("<input>")
+                    .type("number")
+                    .name("i" + curIng + "-quant")
+                    .class("i" + curIng + "-quant")
+                    .prependTo("#new-ingredient")
+            });
+            $newStep.on("click", function() {
+                curStep++
+                $("<label>")
+                    .text("Step " + curStep + ": ")
+                    .prependTo("#new-step")
+                $("<input>")
+                    .type("text")
+                    .id("recipe-step")
+                    .prependTo("#new-step")
+                $("<br>").prependTo("#new-step")
+                $("<br>").prependTo("#new-step")
+            });
+                
+          
+                    
             
         </script>
         
