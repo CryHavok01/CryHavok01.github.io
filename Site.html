@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Making a Website</title>
+        <title>J&S Kitchen</title>
         <style>
             p {
                 font-family: sans-serif;
@@ -23,6 +23,10 @@
                 padding-bottom: 6px;
             }
             
+            #button-result {
+                display: none;
+            }
+            
         </style>
     </head>
     <body>
@@ -39,11 +43,27 @@
         <button type="button" id="add-spice">Add Spice</button>
         <button type="button" id="check-recipe">Look up Recipes</button>
         <button type="button" id="add-recipe">Add new Recipe</button>
+        
+        <form id="button-result" class="add-spice">
+            <label>Spice Name:  </label>
+            <input type="text" name="spice-name"><br><br>
+            
+            <label>Spice Quantity:  </label>
+            <input type="number" name="spice-quant">
+        </form>
+        
+            
     
     <script src="jquery-3.5.1.min.js"></script>
         
         <script>
-        $(".fact").css("background-color", "green");
+            $(".fact").css("background-color", "green");
+            var $addSpiceForm = $(".add-spice");
+            var $addSpiceButton = $("#add-spice");
+            $addSpiceButton.on("click", function() {
+              $addSpiceForm.show();
+            });
+            
         </script>
         
         
