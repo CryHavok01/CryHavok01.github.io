@@ -76,6 +76,8 @@
             <label>Quantity:    </label>
             <input type="number" name="i2-quant" class="12-quant"><br><br>
             
+            <p id="end-ing"></p>
+            
             <button type="button" id="new-ingredient">New Ingredent</button><br><br>
             
             <label>Step 1:</label>
@@ -83,6 +85,8 @@
             
             <label>Step 2:</label>
             <input type="text" id="recipe-step"><br><br>
+            
+            <p id="end-step"></p>
             
             <button type="button" id="new-step">New Step</button>
             
@@ -92,7 +96,7 @@
         </form>
             
     <footer>
-        <p>version 0.3</p>
+        <p>version 0.4</p>
     <script src="jquery-3.5.1.min.js"></script>
         
         <script>
@@ -115,34 +119,34 @@
                 curIng++
                 $("<label>")
                     .text("Ingredient " + curIng + ": ")
-                    .prependTo("#new-ingredient")
+                    .appendTo("#end-ing")
                 $("<input>")
                     .type("text")
                     .name("i" + curIng + "-name")
                     .class("i" + curIng + "-name")
-                    .prependTo("#new-ingredient")
-                $("<br>").prependTo("#new-ingredient")
-                $("<br>").prependTo("#new-ingredient")
+                    .appendTo("#end-ing")
+                $("<br>").appendTo("#end-ing")
+                $("<br>").appendTo("#end-ing")
                 $("<label>")
                     .text("Quantity")
-                    .prependTo("#new-ingredient")
+                    .appendTo("#end-ing")
                 $("<input>")
                     .type("number")
                     .name("i" + curIng + "-quant")
                     .class("i" + curIng + "-quant")
-                    .prependTo("#new-ingredient")
+                    .appendTo("#end-ing")
             });
             $newStep.on("click", function() {
                 curStep++
                 $("<label>")
                     .text("Step " + curStep + ": ")
-                    .prependTo("#new-step")
+                    .appendTo("#end-step")
                 $("<input>")
                     .type("text")
                     .id("recipe-step")
-                    .prependTo("#new-step")
-                $("<br>").prependTo("#new-step")
-                $("<br>").prependTo("#new-step")
+                    ..appendTo("#end-step")
+                $("<br>").appendTo("#end-step")
+                $("<br>").appendTo("#end-step")
             });
                 
           
