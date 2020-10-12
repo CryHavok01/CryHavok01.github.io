@@ -96,7 +96,7 @@
         </form>
             
     <footer>
-        <p>version 0.6</p>
+        <p>version 0.7</p>
     <script src="jquery-3.5.1.min.js"></script>
         
         <script>
@@ -104,6 +104,10 @@
             var curIng = 2;
             var curStep = 2;
             var $cloneIng = $("#ing-form").clone()
+            function cloneIngUpdate() {
+                $cloneIng.find(".i2-name").attr("name", "i" + curIng + "-name")
+                $cloneIng.find(".i2-name").attr("class", "i" + curIng + "-name")        
+            };
             var $newStep = $("#new-step");
             var $newIng = $("#new-ingredient");
             var $addSpiceForm = $(".add-spice");
@@ -118,8 +122,6 @@
             });
             $newIng.on("click", function() {
                 curIng++
-                $cloneIng.find(".i2-name").attr("name", "i" + curIng + "-name")
-                $cloneIng.find(".i2-name").attr("class", "i" + curIng + "-name")
                 $cloneIng.appendTo("#end-ing")
             });
             
