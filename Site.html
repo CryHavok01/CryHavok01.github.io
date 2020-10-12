@@ -71,10 +71,10 @@
             <label>Quantity:    </label>
             <input type="number" name="i1-quant" class="i1-quant"><br><br>
             
-            <label>Ingredient 2:  </label>
+            <div id="ing-form"> "<label>Ingredient 2:  </label>
             <input type="text" name="i2-name" class="i2-name"><br>
             <label>Quantity:    </label>
-            <input type="number" name="i2-quant" class="12-quant"><br><br>
+            <input type="number" name="i2-quant" class="12-quant"><br><br></div>
             
             <p id="end-ing"></p>
             
@@ -96,7 +96,7 @@
         </form>
             
     <footer>
-        <p>version 0.4</p>
+        <p>version 0.5</p>
     <script src="jquery-3.5.1.min.js"></script>
         
         <script>
@@ -117,24 +117,7 @@
             });
             $newIng.on("click", function() {
                 curIng++
-                $("<label>")
-                    .text("Ingredient " + curIng + ": ")
-                    .appendTo("#end-ing")
-                $("<input>")
-                    .type("text")
-                    .name("i" + curIng + "-name")
-                    .class("i" + curIng + "-name")
-                    .appendTo("#end-ing")
-                $("<br>").appendTo("#end-ing")
-                $("<br>").appendTo("#end-ing")
-                $("<label>")
-                    .text("Quantity")
-                    .appendTo("#end-ing")
-                $("<input>")
-                    .type("number")
-                    .name("i" + curIng + "-quant")
-                    .class("i" + curIng + "-quant")
-                    .appendTo("#end-ing")
+                $("#ing-form).clone().appendTo("#end-ing")
             });
             $newStep.on("click", function() {
                 curStep++
