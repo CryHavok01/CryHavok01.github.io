@@ -57,7 +57,7 @@
             <input type="text" name="spice-name" class="spice-name"><br><br>
             
             <label>Spice Quantity:  </label>
-            <input type="number" name="spice-quant" class="spice-quant"><br><br>
+            <input type="text" name="spice-quant" class="spice-quant"><br><br>
             
             <button type="submit">Enter Spice</button>
             
@@ -69,14 +69,14 @@
             <label>Ingredient 1:  </label>
             <input type="text" name="i1-name" class="i1-name"><br>
             <label>Quantity:    </label>
-            <input type="number" name="i1-quant" class="i1-quant"><br><br>
+            <input type="text" name="i1-quant" class="i1-quant"><br><br>
             
             <div id="ing-form"> "<label>Ingredient 2:  </label>
             <input type="text" name="i2-name" class="i2-name"><br>
             <label>Quantity:    </label>
-            <input type="number" name="i2-quant" class="12-quant"><br><br>
+            <input type="text" name="i2-quant" class="12-quant"><br><br></div>
             
-            <p id="end-ing"></p></div>
+            <p id="end-ing"></p>
             
             <button type="button" id="new-ingredient">New Ingredent</button><br><br>
             
@@ -122,6 +122,7 @@
                 $cloneIng.find(".i2-name").attr("class", "i" + curIng + "-name")
                 $cloneIng.appendTo("#end-ing")
             });
+            
             $newStep.on("click", function() {
                 curStep++
                 $("<label>")
