@@ -74,9 +74,9 @@
             <div id="ing-form"> "<label>Ingredient 2:  </label>
             <input type="text" name="i2-name" class="i2-name"><br>
             <label>Quantity:    </label>
-            <input type="number" name="i2-quant" class="12-quant"><br><br></div>
+            <input type="number" name="i2-quant" class="12-quant"><br><br>
             
-            <p id="end-ing"></p>
+            <p id="end-ing"></p></div>
             
             <button type="button" id="new-ingredient">New Ingredent</button><br><br>
             
@@ -103,6 +103,8 @@
             $(".fact").css("background-color", "green");
             var curIng = 2;
             var curStep = 2;
+            var $cloneIng = $("#ing-form").clone()
+
             var $newStep = $("#new-step");
             var $newIng = $("#new-ingredient");
             var $addSpiceForm = $(".add-spice");
@@ -117,7 +119,7 @@
             });
             $newIng.on("click", function() {
                 curIng++
-                $("#ing-form").clone().appendTo("#end-ing")
+                $cloneIng.appendTo("#end-ing")
             });
             $newStep.on("click", function() {
                 curStep++
