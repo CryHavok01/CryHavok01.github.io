@@ -122,7 +122,7 @@
             });
             $newIng.on("click", function() {
                 curIng++
-                $cloneIng.prependTo("#new-ingredient")
+                $("#ing-form").clone().appendTo("#end-ing")
             });
             
             $newStep.on("click", function() {
