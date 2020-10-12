@@ -96,7 +96,7 @@
         </form>
             
     <footer>
-        <p>version 0.11</p>
+        <p>version 0.12</p>
     <script src="jquery-3.5.1.min.js"></script>
         
         <script>
@@ -121,7 +121,7 @@
                 $cloneIng.find("#ing-label").text("Ingredient " + curIng + ":")
                 $cloneIng.find(".i2-name").attr("name", "i" + curIng + "-name")
                 $cloneIng.find(".i2-name").attr("class", "i" + curIng + "-name")        
-                $cloneIng.prependTo("#end-ing")
+                $cloneIng.appendTo("#end-ing")
                 });
             
             $newStep.on("click", function() {
