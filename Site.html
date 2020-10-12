@@ -76,17 +76,17 @@
             <label>Quantity:    </label>
             <input type="text" name="i2-quant" class="12-quant"><br><br></div>
             
-            <p id="end-ing"></p>
+            <div id="end-ing"></div>
             
             <button type="button" id="new-ingredient">New Ingredent</button><br><br>
             
             <label>Step 1:</label>
-            <input type="text" id="recipe-step"><br><br>
+            <input type="text" class="step1" name="step1"><br><br>
             
-            <label>Step 2:</label>
-            <input type="text" id="recipe-step"><br><br>
+            <div id="step-form"><label id="step-label>Step 2:</label>
+            <input type="text" class="step2" name="step2"><br><br></div?
             
-            <p id="end-step"></p>
+            <div id="end-step"></div>
             
             <button type="button" id="new-step">New Step</button>
             
@@ -96,7 +96,7 @@
         </form>
             
     <footer>
-        <p>version 0.12</p>
+        <p>version 0.13</p>
     <script src="jquery-3.5.1.min.js"></script>
         
         <script>
@@ -119,22 +119,18 @@
                 curIng++
                 var $cloneIng = $("#ing-form").clone()
                 $cloneIng.find("#ing-label").text("Ingredient " + curIng + ":")
-                $cloneIng.find(".i2-name").attr("name", "i" + curIng + "-name")
-                $cloneIng.find(".i2-name").attr("class", "i" + curIng + "-name")        
+                $cloneIng.find(".step2").attr("name", "step" + curIng)
+                $cloneIng.find(".step2").attr("class", "step" + curIng)        
                 $cloneIng.appendTo("#end-ing")
-                });
+            });
             
             $newStep.on("click", function() {
                 curStep++
-                $("<label>")
-                    .text("Step " + curStep + ": ")
-                    .appendTo("#end-step")
-                $("<input>")
-                    .type("text")
-                    .id("recipe-step")
-                    .appendTo("#end-step")
-                $("<br>").appendTo("#end-step")
-                $("<br>").appendTo("#end-step")
+                var $cloneStep = $("#step-form").clone()
+                $cloneStep.find("#step-label").text("Step " + curStep + ":")
+                $cloneStep.find(".step2").attr("name", "i" + curIng + "-name")
+                $cloneStep.find(".step2").attr("class", "i" + curIng + "-name")        
+                $cloneStep.appendTo("#end-step")
             });
                 
           
